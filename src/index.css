@@ -1,0 +1,21 @@
+/* Font import must come before everything else */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;600&display=swap");
+@import "tailwindcss";
+
+/* Design tokens. Each one becomes Tailwind classes automatically:
+   --color-ink    -> bg-ink, text-ink, border-ink
+   --font-display -> font-display */
+@theme {
+  --color-ink: #25214f;      /* blueberry: text, borders, buttons */
+  --color-butter: #fff3c4;   /* card paper, hover fills */
+  --color-page: #ecebf8;     /* page background (also used for the receipt notches) */
+  --color-yolk: #f2b632;     /* focus rings */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-page font-body text-ink;
+  }
+}
